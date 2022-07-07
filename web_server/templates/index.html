@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pico W: Temperature Sensor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script>
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            // send request
+            // get data
+            // parse data
+            // draw chart
+
+            var data = google.visualization.arrayToDataTable([
+                ['Time', 'Temperature (Degrees Celsius'],
+                ['12', 20],
+                ['1', 21.5],
+                ['2', 25],
+                ['3', -19],
+            ]);
+
+            var options = {
+                title: 'Temperature Sensor',
+                curveType: 'function',
+                legend: {position: 'bottom'},
+                min: 10,
+
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+
+    </script>
+</head>
+
+<body>
+
+<div class="content-flex full-vp" style="align-items: center">
+    <div id="curve_chart" style="width: 80vw; height: 80vh;"></div>
+</div>
+
+
+</body>
+
+
+</html>
