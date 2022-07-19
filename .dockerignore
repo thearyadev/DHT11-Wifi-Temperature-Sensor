@@ -1,0 +1,7 @@
+main.py
+.idea
+.dockerignore
+.dockerfile
+README.md
+LICENSE
+venv
